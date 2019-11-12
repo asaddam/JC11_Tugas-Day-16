@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tugas Day 16</title>
+    <style>
+        input[type='submit']{
+            width: 100px; font: 30px bold;
+        }
+        input[type="radio"]:checked+span { 
+            font-weight: bold; font-style: italic;}
+    
+    </style>
+</head>
+<body>
+    <h3>1. Siapakah Presiden ke-3 Republik Indonesia ?</h3>
+    <input type="radio" name="answer" value="Habibie" checked><span>Prof. B. J. Habibie</span>
+    <input type="radio" name="answer" value="AWahid"><span>Abdurrahman Wahid</span>
+    <input type="radio" name="answer" value="IrSoekarno"><span>Ir. Soekarno</span>
+    <input type="radio" name="answer" value="Jokowi"><span>Joko widodo</span>
+
+    <h3>2. Berikut adalah nama-nama bahasa pemrograman, kecuali ...</h3>
+    <input type="radio" name="answer1" value="python" checked><span>Python</span>
+    <input type="radio" name="answer1" value="microbit"><span>Micro:bit</span>
+    <input type="radio" name="answer1" value="javascript"><span>JavaScript</span>
+    <input type="radio" name="answer1" value="HTML"><span>HTML</span>
+
+    <h3>3. Apa judul lagu yang diduga diplagiat oleh lagu "Sayang" Via Vallen ?</h3>
+    <input type="radio" name="answer2" value="qingfei" checked><span> Qing Fei De Yei</span>
+    <input type="radio" name="answer2" value="tinghai"><span>Ting Hai</span>
+    <input type="radio" name="answer2" value="MiraiKiroro"><span>Mirai E Kiroro</span>
+    <input type="radio" name="answer2" value="hausiang"><span>Hau Siang Hau Siang</span>
+
+    <h3>4. Siapakah Tokoh dibalik topeng Batman?</h3>
+    <input type="radio" name="answer3" value="natasha" checked><span>Natasha Romanov</span>
+    <input type="radio" name="answer3" value="peter"><span>Peter Parker </span>
+    <input type="radio" name="answer3" value="tony"><span>Tony Stark</span>
+    <input type="radio" name="answer3" value="bruce"><span>Bruce Wayne</span>
+    <br>
+    <br>
+    <input type="submit" value="SUBMIT" onclick="printHasil()">
+
+    <h1 id="hasil">
+        
+    </h1>
+
+    <script>
+        var hasil = 0
+        
+        function hasil1(){
+            var q1 = document.getElementsByName('answer')
+            for(var i = 0; i<q1.length; i++){
+                if(q1[i].value == 'Habibie' && q1[i].checked){
+                    hasil += 25
+                }else {
+                    hasil += 0
+                }
+            }
+        }
+        function hasil2(){
+            var q2 = document.getElementsByName('answer1')
+            for(var i = 0; i<q2.length; i++){
+                if(q2[i].value == 'microbit' && q2[i].checked){
+                    hasil += 25
+                }else {
+                    hasil += 0
+                }
+            }
+        }
+        function hasil3(){
+            var q3 = document.getElementsByName('answer2')
+            for(var i = 0; i<q3.length; i++){
+                if(q3[i].value == 'MiraiKiroro' && q3[i].checked){
+                    hasil += 25
+                }else {
+                    hasil += 0
+                }
+            }
+        }
+        function hasil4(){
+            var q4 = document.getElementsByName('answer3')
+            for(var i = 0; i<q4.length; i++){
+                if(q4[i].value == 'bruce' && q4[i].checked){
+                    hasil += 25
+                }else {
+                    hasil += 0
+                }
+            }
+        }
+
+        function printHasil(){
+            hasil1()
+            hasil2()
+            hasil3()
+            hasil4()
+            var output = `Nilai akhir Anda ${hasil}`
+            document.getElementById('hasil').innerHTML = output
+            hasil = 0
+
+        }
+    </script>
+</body>
+</html>
